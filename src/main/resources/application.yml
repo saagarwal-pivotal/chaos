@@ -1,0 +1,12 @@
+server:
+  port: 9999
+
+spring:
+  profiles:
+    active: chaos-monkey
+  application:
+    name: fashion-bestseller
+  sleuth:
+    sampler:
+      probability: 1.0
+

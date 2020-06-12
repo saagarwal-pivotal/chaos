@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "d6483393-259f-4c69-bbc5-8d6c4547b775",
+		"name": "chaos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/fashion/bestseller",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"fashion",
+						"bestseller"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EnableChaos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/actuator/chaosmonkey/enable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"actuator",
+						"chaosmonkey",
+						"enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chaos-disable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/actuator/chaosmonkey/disable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"actuator",
+						"chaosmonkey",
+						"disable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-watchers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/actuator/chaosmonkey/watchers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"actuator",
+						"chaosmonkey",
+						"watchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify-assaults-chaos-monkey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"level\": 5,\n    \"latencyRangeStart\": 1000,\n    \"latencyRangeEnd\": 3000,\n    \"latencyActive\": true,\n    \"exceptionsActive\": false,\n    \"exception\": {\n        \"type\": null,\n        \"arguments\": null\n    },\n    \"killApplicationActive\": false,\n    \"memoryActive\": false,\n    \"memoryMillisecondsHoldFilledMemory\": 90000,\n    \"memoryMillisecondsWaitNextIncrease\": 1000,\n    \"memoryFillIncrementFraction\": 0.15,\n    \"memoryFillTargetFraction\": 0.25,\n    \"runtimeAssaultCronExpression\": \"OFF\",\n    \"watchedCustomServices\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9999/actuator/chaosmonkey/assaults",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"actuator",
+						"chaosmonkey",
+						"assaults"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaos-get-assaults",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/actuator/chaosmonkey/assaults",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"actuator",
+						"chaosmonkey",
+						"assaults"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
